@@ -5,8 +5,13 @@ while key_hits(4)=="":
         pass
 
 print("time_hits:", list_time_hits)
-print("tima_spans:", spans(list_time_hits,4))
+list_timespans=spans(list_time_hits,4)
+print("tima_spans:", list_timespans)
 
-min=min()
-def devide(x):
-    x/min(x)
+min=min(list_timespans)
+rythm_raw=[]
+
+for t in list_timespans:
+    rythm_raw.append(int(t/min))
+
+print(rythm_raw)
