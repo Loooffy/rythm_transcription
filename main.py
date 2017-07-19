@@ -10,10 +10,10 @@ list_timespans=spans(list_time_hits,4)
 print("tima_spans:", list_timespans)
 
 min=min(list_timespans)
-rhythm_raw=[0]
+list_beatspans=[1]
 
 for t in list_timespans:
-    rhythm_raw.append(int(t/min))
+    list_beatspans.append(int(t/min))
 
-print(rhythm_raw)
-plot_the_notes(rhythm_raw)
+print(list_beatspans)
+plot_the_notes(list_beatspans[0:-1])

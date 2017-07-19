@@ -8,7 +8,7 @@ def plot_the_notes(rhythm_raw):
     canvas=Canvas(root,width=1000,height=500,bg='white')
     canvas.grid()
 
-    notePos=0 #note的順位
+    notePos=1 #note的順位
     seq_notePos=[] #紀錄note順位的陣列
 
     noteLocation=0 #note的位置
@@ -38,25 +38,25 @@ def plot_the_notes(rhythm_raw):
         #依序將note的順位存到seq_notePos
 
     for notePos in seq_notePos:
-        noteLocation=(notePos+1)*d_note+int(notePos/4)*d_bar #nd+(n/4)D
+        noteLocation=(notePos)*d_note+int((notePos-1)/4)*d_bar #nd+(n/4)D
         seq_noteLoc.append(noteLocation)
         #依序將note的位置存到seq_notePos
 
     for noteLoc in seq_noteLoc:
         plot_note(canvas,x0+noteLoc,y0)
     for trunkLoc in seq_trunkLoc:
-        plot_trunk(x0+trunkLoc,y0)
+        plot_trunk(canvas,x0+trunkLoc,y0)
     for barLoc in seq_barLoc:
-        plot_bar(x0+barLoc,y0)
+        plot_bar(canvas,x0+barLoc,y0)
     #印出音符和音符桿
 
-    print(seq_notePos)
+    print("notes: ",seq_notePos)
 
     root.mainloop()
 
-def plot_note(x,y):
+def plot_note(canvas,x,y):
     canvas.create_oval(x-5,y-4,x+5,y+4,fill='black')
-def plot_trunk(x,y):
+def plot_trunk(canvas,x,y):
     canvas.create_line(x+5,y-20,x+5,y,fill='black')
-def plot_bar(x,y):
-    canvas.create_line(x,y-25,x,y,fill='blue',width=3)
+def plot_bar(canvas,x,y):
+    canvas.create_line(x,y-25,x,y+10,fill='blue',width=3)
