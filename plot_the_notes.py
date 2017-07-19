@@ -19,17 +19,15 @@ def plot_the_notes(rhythm_raw):
     barPos=0 #初始化bar的順位為0
     seq_barLoc=[] #紀錄bar位置的陣列
 
-    d_note=20
-    d_bar=20
-
-    x0=10
-    y0=100
+    d_note=20; d_bar=20
+    x0=10; y0=100
 
     for trunkPos in range(sum(rhythm_raw)):
-        seq_trunkLoc.append((trunkPos+1)*d_note+int((trunkPos)/4)*d_bar) #nd+(n/4)D
+        seq_trunkLoc.append((trunkPos+1)*d_note+trunkPos//4*d_bar) #nd+(n/4)D
         #依序將trunk的位置存到seq_trunkPos
+        #int(a/b) 改成 a//b
 
-    for barPos in range(int(sum(rhythm_raw)/4)+1): #sum(rhythm_raw/4)為小節數
+    for barPos in range((sum(rhythm_raw)//4)+1): #sum(rhythm_raw/4)為小節數
         seq_barLoc.append(barPos*(4*d_note+d_bar))
 
     for span in rhythm_raw:
@@ -38,7 +36,7 @@ def plot_the_notes(rhythm_raw):
         #依序將note的順位存到seq_notePos
 
     for notePos in seq_notePos:
-        noteLocation=(notePos)*d_note+int((notePos-1)/4)*d_bar #nd+(n/4)D
+        noteLocation=(notePos)*d_note+((notePos-1)//4)*d_bar #nd+(n/4)D
         seq_noteLoc.append(noteLocation)
         #依序將note的位置存到seq_notePos
 
