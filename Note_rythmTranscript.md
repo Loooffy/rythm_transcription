@@ -7,10 +7,11 @@
 #### 工作環境與流程
 1. text editor: atom
 2. language: Python 3.4
-3. 執行環境：用powershell的指令開啟python執行.py
-4. 繪圖：tkinter
-5. 提問：stack overflow
+3. execute：在powershell裡用python執行.py
+4. imported module：tkinter
+5. QA：stack overflow
 6. Log：Note
+7. version control：git
 
 #### 設計策略
 1. 計時：紀錄每次按下按鍵的時間，存到list中
