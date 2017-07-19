@@ -8,8 +8,9 @@
 1. text editor: atom
 2. language: Python 3.4
 3. 執行環境：用powershell的指令開啟python執行.py
-3. 繪圖：tkinter
-3. Log：Note
+4. 繪圖：tkinter
+5. 提問：stack overflow
+6. Log：Note
 
 #### 設計策略
 1. 計時：紀錄每次按下按鍵的時間，存到list中
